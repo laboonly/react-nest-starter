@@ -1,0 +1,18 @@
+{
+  "name": "react-nest-starter",
+  "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter @starter/api dev\" \"pnpm --filter @starter/web dev\"",
+    "dev:web": "pnpm --filter @starter/web dev",
+    "dev:api": "pnpm --filter @starter/api dev",
+    "build": "pnpm --filter @starter/api build && pnpm --filter @starter/web build",
+    "typecheck": "pnpm --filter @starter/api typecheck && pnpm --filter @starter/web typecheck",
+    "prisma:generate": "pnpm --filter @starter/api prisma:generate",
+    "db:up": "docker compose up -d mysql",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
